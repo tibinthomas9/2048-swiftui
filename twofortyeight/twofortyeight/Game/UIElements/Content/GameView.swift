@@ -14,6 +14,13 @@ struct GameView: View {
             GoalText()
             Board(board: viewModel.state.board, addedTile: viewModel.addedTile)
             Moves(viewModel.numberOfMoves)
+            Button {
+                viewModel.state.board[0][1] = 2048
+                viewModel.isGameOver = true
+            } label: {
+               Text("Tap")
+            }
+
         }
         .frame(minWidth: .zero,
                maxWidth: .infinity,
